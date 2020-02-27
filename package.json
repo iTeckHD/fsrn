@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/iTeckHD/fsrn#readme",
   "dependencies": {
-    "inquirer": "7.0.4",
-    "fs-extra": "8.1.0"
+    "@types/cli-table": "^0.3.0",
+    "cli-table": "^0.3.1",
+    "fs-extra": "8.1.0",
+    "inquirer": "7.0.4"
   },
   "devDependencies": {
     "@types/node": "latest",
