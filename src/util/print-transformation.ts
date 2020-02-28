@@ -2,7 +2,7 @@ import Table from "cli-table";
 import { output } from "./output";
 
 export function printTransformation(
-  files: Array<{ value: string; transform: string }>
+  files: Array<{ value: string; transformed: string }>
 ) {
   var table = new Table({
     head: ["before", "after"],
@@ -10,7 +10,7 @@ export function printTransformation(
   });
 
   for (const file of files) {
-    table.push([file.value, file.transform]);
+    table.push([file.value, file.transformed]);
   }
 
   output(table.toString());

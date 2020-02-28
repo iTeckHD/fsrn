@@ -7,6 +7,8 @@ import { getPathQuestion } from "./questions/path-question";
 import { output } from "./util/output";
 import { printTransformation } from "./util/print-transformation";
 import { getConfirmQuestion } from "./questions/confirm-question";
+import { rename } from "fs-extra";
+import { join } from "path";
 
 async function run() {
   const { result: path } = await inquirer.prompt([getPathQuestion()]);
@@ -26,7 +28,7 @@ async function run() {
 
   const transformed = files.map(f => ({
     value: f,
-    transform: transform(f, filePattern, renamePattern)
+    transformed: transform(f, filePattern, renamePattern)
   }));
 
   printTransformation(transformed);
@@ -36,6 +38,15 @@ async function run() {
   if (!confirmed) {
     return;
   }
+
+  await Promise.all(
+    transformed.map(f => {
+      const oldFile = join(path, f.value);
+      const newFile = join(path, f.transformed);
+
+      return rename(oldFile, newFile);
+    })
+  );
 }
 
 run();
