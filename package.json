@@ -4,6 +4,7 @@
   "description": "Easily rename files, written in typescript with inquirer.js",
   "main": "dist/index.js",
   "scripts": {
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf dist && tsc",
     "start": "npm run build && node dist/index.js"
@@ -21,7 +22,7 @@
   "homepage": "https://github.com/iTeckHD/fsrn#readme",
   "dependencies": {
     "@types/cli-table": "^0.3.0",
-    "cli-table": "^0.3.1",
+    "cli-table": "0.3.1",
     "fs-extra": "8.1.0",
     "inquirer": "7.0.4"
   },
