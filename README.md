@@ -1,2 +1,3 @@
 # fsrn
-Easy cli renaming, writte in typescript with inquirer.js
+
+Easy cli renaming, written in typescript with inquirer.js
