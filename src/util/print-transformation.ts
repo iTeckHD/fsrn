@@ -1,17 +1,12 @@
-import Table from "cli-table";
 import { output } from "./output";
 
 export function printTransformation(
   files: Array<{ value: string; transformed: string }>
 ) {
-  var table = new Table({
-    head: ["before", "after"],
-    colWidths: [35, 35]
-  });
+  const arrResult = [];
 
   for (const file of files) {
-    table.push([file.value, file.transformed]);
+    output(file.value);
+    output(`> ${file.transformed}`);
   }
-
-  output(table.toString());
 }
