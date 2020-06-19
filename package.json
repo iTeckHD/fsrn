@@ -1,13 +1,13 @@
 {
   "name": "fsrn",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "Easily rename files, written in typescript with inquirer.js",
-  "bin": "dist/index.js",
+  "bin": "dist/bin/index.js",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && tsc && cp -r src/bin dist",
     "dev": "npm run build && npm start",
     "start": "node dist/index.js"
   },
