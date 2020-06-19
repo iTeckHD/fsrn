@@ -1,6 +1,6 @@
 {
   "name": "fsrn",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Easily rename files, written in typescript with inquirer.js",
   "bin": "dist/index.js",
   "main": "dist/index.js",
